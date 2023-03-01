@@ -7,7 +7,7 @@ public class RedisKeyUtil {
     private static final String PREFIX_USER_LIKE = "like:user";
     private static final String PREFIX_FOLLOWEE = "followee";
     private static final String PREFIX_FOLLOWER = "follower";
-    private static final String PREFIX_KAPTCHA = "kaptcha";
+    private static final String PREFIX_KAPTCHA = "kaptcha";// 验证码前缀
     private static final String PREFIX_TICKET = "ticket";
     private static final String PREFIX_USER = "user";
     private static final String PREFIX_UV = "uv";
@@ -39,6 +39,7 @@ public class RedisKeyUtil {
     }
 
     // 登录验证码
+    // 因为不知道具体用户，所以不能传userId
     public static String getKaptchaKey(String owner) {
         return PREFIX_KAPTCHA + SPLIT + owner;
     }
